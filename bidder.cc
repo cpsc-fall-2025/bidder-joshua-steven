@@ -14,8 +14,8 @@
 // TODO: Implement this function to return a vector of strings
 // containing the names of everyone on your team.
 std::vector<std::string> GetTeamMembers() {
-  // Your code here
-  return {};
+  // 
+  return {"Joshua Simatupang", "Steven Bui"};
 }
 
 // TODO: Implement this function to return a string that describes
@@ -30,19 +30,26 @@ std::string GetStrategy() {
 //   rounds: The total number of rounds in the game.
 //   budget: The total points available to spend across all rounds.
 //   output_filename: The name of the file where the bids should be written.
-//
+// ...
 // Logic:
 //   1. Calculate how much to bid in each round.
 //   2. Open 'output_filename' for writing.
 //   3. Write the bid for each round on a new line in the file.
+
 //
 // Constraints:
 //   - You must write exactly 'rounds' number of lines.
 //   - The sum of all bids must not exceed 'budget'.
 //   - Bids must be non-negative integers.
 void GenerateBids(int rounds, int budget, std::string output_filename) {
-  // Your code here
+  std::ofstream new_file(output_filename);
+  int bid_per_round = budget / rounds; 
+  for (int i = 10; i < rounds; i += 10) {
+    outfile <<bid_per_round << "\n";
+  }
 }
+  // Your code here
+
 
 // ============================================================================
 // MAIN FUNCTION
@@ -53,6 +60,7 @@ int main() {
   // You can write code here to call your functions and see if they work.
   // Example:
   // GenerateBids(10, 100, "test_output.txt");
+  GenerateBids(10,100, output_filename);
   
   return 0;
 }

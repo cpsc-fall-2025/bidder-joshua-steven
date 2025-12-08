@@ -22,7 +22,7 @@ std::vector<std::string> GetTeamMembers() {
 // the strategy your logic uses to bid (e.g., "We bid high early on").
 std::string GetStrategy() {
   // Your code here
-  return "Bid high as possible";
+  return "Bid high on first two rounds";
 }
 
 // TODO: Implement the bidding logic.
@@ -44,9 +44,13 @@ std::string GetStrategy() {
 void GenerateBids(int rounds, int budget, std::string output_filename) {
   std::ofstream new_file(output_filename);
   int bid_per_round = 10; 
-  for (int i = 1; i < rounds; i++) {
-    bid_per_round = bid_per_round*i;
+  for (int i = 0; i < rounds; i++) {
+    bid_per_round = bid_per_round*2;
+    if (bid_per_round > 79) {
+      bid_per_round = 0;
+    }
     new_file << bid_per_round << "\n";
+    
   }
 }
   // Your code here

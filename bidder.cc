@@ -44,8 +44,8 @@ std::string GetStrategy() {
 void GenerateBids(int rounds, int budget, std::string output_filename) {
   std::ofstream new_file(output_filename);
   int bid_per_round = budget / rounds; 
-  for (int i = 10; i < rounds; i += 10) {
-    outfile <<bid_per_round << "\n";
+  for (int i = 10; i < rounds; i++) {
+    std::cout << output_filename << bid_per_round << "\n";
   }
 }
   // Your code here
@@ -60,7 +60,7 @@ int main() {
   // You can write code here to call your functions and see if they work.
   // Example:
   // GenerateBids(10, 100, "test_output.txt");
-  GenerateBids(10,100, output_filename);
+  GenerateBids(10,100, "test_output.txt");
   
   return 0;
 }
